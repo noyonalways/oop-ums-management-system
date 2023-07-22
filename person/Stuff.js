@@ -5,8 +5,8 @@ const _title = Symbol("subject");
 class Stuff extends Employee {
 	static className = "STUFF";
 
-	constructor(id, name, title) {
-		super(id, name);
+	constructor(id, name, employeeID, title) {
+		super(id, name, employeeID);
 		this[_title] = title;
 	}
 

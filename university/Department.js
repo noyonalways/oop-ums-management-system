@@ -2,7 +2,7 @@ const _id = Symbol("id");
 const _name = Symbol("name");
 const _subjects = Symbol("subjects");
 const _dean = Symbol("dean");
-const _teachers = Symbol("teacher");
+const _teachers = Symbol("teachers");
 
 class Department {
 	static className = "DEPARTMENT";

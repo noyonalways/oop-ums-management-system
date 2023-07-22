@@ -25,7 +25,7 @@ guardian.contact.address = new Address({
 	id: 1,
 	roadNo: "1230, Dhaka",
 	city: "Dhaka City",
-	region: "Asia",
+	region: "Dhaka",
 	country: "Bangladesh",
 	postalCode: "1730",
 });
@@ -79,12 +79,96 @@ const totalCredit = student.department.subjects.reduce((a, b) => {
 const dean = new Teacher(1, "Mr. Biplop", department.subjects[0], "EMP-001");
 // TODO: update the dean's informaiton
 
-const teacher1 = new Teacher(2, "Mr. Monsur", department.subjects[1]);
-const teacher2 = new Teacher(3, "Mrs Laila", department.subjects[2]);
+dean.blood = "AB+";
+dean.department = department;
+dean.salary = 100000;
+dean.account = new Account(2, "Bank", 200000);
+dean.contact = new Contact({
+	id: 3,
+	email: "biplop@gmail.com",
+	phone: "+8801755555555",
+	address: new Address({
+		id: 2,
+		roadNo: "Gulshan 02",
+		city: "Gulshan City",
+		region: "Dhaka",
+		country: "Bangladesh",
+		postalCode: "12234",
+	}),
+});
+
+// teacher 1
+const teacher1 = new Teacher(
+	2,
+	"Mr. Monsur",
+	department.subjects[1],
+	"EMP-002"
+);
+teacher1.blood = "AB-";
+teacher1.department = department;
+teacher1.salary = 80000;
+teacher1.account = new Account(3, "Bank", 205000);
+teacher1.contact = new Contact({
+	id: 4,
+	email: "monsur@gmail.com",
+	phone: "+8801766666666",
+	address: new Address({
+		id: 2,
+		roadNo: "Banani 02",
+		city: "Banani City",
+		region: "Dhaka",
+		country: "Bangladesh",
+		postalCode: "15634",
+	}),
+});
+
+// teacher 2
+const teacher2 = new Teacher(3, "Mrs Laila", department.subjects[2], "EMP-003");
+teacher2.blood = "O+";
+teacher2.department = department;
+teacher2.salary = 75000;
+teacher2.account = new Account(2, "Bank", 150000);
+teacher2.contact = new Contact({
+	id: 3,
+	email: "laila@gmail.com",
+	phone: "+8801788888525",
+	address: new Address({
+		id: 2,
+		roadNo: "Mirpur 12",
+		city: "Mirpur City",
+		region: "Dhaka",
+		country: "Bangladesh",
+		postalCode: "12005",
+	}),
+});
 
 department.dean = dean;
 department.addTeacher(dean);
 department.addTeacher(teacher1);
 department.addTeacher(teacher2);
 
-console.log(student);
+// student.department.teachers.forEach((teacher, index) => {
+// 	console.log(`${teacher.id} - ${teacher.name} (${teacher.subject.name})`);
+// });
+
+guardian.addChild(student);
+
+const teachersSalary = guardian.children[0].department.teachers.reduce(
+	(acc, cur) => {
+		acc += cur.salary;
+		return acc;
+	},
+	0
+);
+
+console.log(teachersSalary);
+
+let sameBloodCount = 0;
+if (student.blood === "O+") sameBloodCount++;
+if (student.guardian.blood === "O+") sameBloodCount++;
+student.department.teachers.forEach((teacher) => {
+	if (teacher.blood === "O+") sameBloodCount++;
+});
+
+
+console.log(sameBloodCount);

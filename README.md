@@ -4,7 +4,7 @@
 
 
 
-## [![Google Analytics](/assets/notion-app.logo.png "Check the Notion Doc") ](https://guiltless-lemonade-164.notion.site/OOP-Case-Studies-University-Management-System-59f178f00e5b446fbd18d456a900e1b1?pvs=4) Read the Documents
+##  [![Raed the documentation](/assets/notion-app.logo.png)](https://guiltless-lemonade-164.notion.site/OOP-Case-Studies-University-Management-System-59f178f00e5b446fbd18d456a900e1b1?pvs=4 "Click to read the Notion Documentation") 
 
 
 
