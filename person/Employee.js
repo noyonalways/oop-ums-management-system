@@ -1,7 +1,7 @@
 const UniPerson = require("./UniPerson");
 
-const _employeeID = Symbol("studentID");
-const _salary = Symbol("fee");
+const _employeeID = Symbol("employeeID");
+const _salary = Symbol("salary");
 
 class Employee extends UniPerson {
 	static className = "EMPLOYEE";

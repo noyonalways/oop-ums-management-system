@@ -44,9 +44,9 @@ class Department {
 	set dean(value) {
 		this[_dean] = value;
 	}
-	set teachers(value) {
-		this[_teachers] = value;
-	}
+	// set teachers(value) {
+	// 	this[_teachers] = value;
+	// }
 
 	// methods
 	addTeacher(teacher) {
@@ -56,7 +56,8 @@ class Department {
 	toString() {
 		return `
         ID: ${this[_id]},
-        Name: ${this[_name]}`;
+        Name: ${this[_name]},
+		Subjects: ${this[_subjects]}`;
 	}
 }
 

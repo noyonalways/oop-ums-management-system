@@ -8,8 +8,8 @@ class UniPerson extends Person {
 
 	constructor(id, name, department, account) {
 		super(id, name);
-		this[_department] = department;
-		this[_account] = account;
+		this[_department] = department || null;
+		this[_account] = account || null;
 	}
 
 	// Getters
